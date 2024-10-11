@@ -42,7 +42,7 @@
     <header class="bg-dark text-white text-center py-5">
         <div class="container">
             <h1>Expedientes</h1>
-            <p>Consulta y gestiona los expedientes legales.</p>
+            <p>Consulta y gestiona la información de los expedientes.</p>
         </div>
     </header>
 
@@ -50,12 +50,17 @@
     <section class="py-5">
         <div class="container">
             <h2 class="text-center">Lista de Expedientes</h2>
+            <div class="text-end mb-3">
+                <a href="agregar_expediente.html" class="btn btn-success">Agregar Expediente</a>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Cliente</th>
-                        <th>Descripción</th>
+                        <th>Tipo Expediente</th>
+                        <th>Nro Expediente</th>
+                        <th>Juzgado</th>
+                        <th>Carátula</th>
                         <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
@@ -63,17 +68,27 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Juan Pérez</td>
-                        <td>Divorcio</td>
-                        <td>En Proceso</td>
-                        <td><a href="editar_expediente.html?id=1" class="btn btn-warning btn-sm">Editar</a></td>
+                        <td>J</td>
+                        <td>12345</td>
+                        <td>1</td>
+                        <td>Demanda Civil</td>
+                        <td>Activo</td>
+                        <td>
+                            <a href="editar_expediente.html?id=1" class="btn btn-warning btn-sm">Editar</a>
+                            <button class="btn btn-danger btn-sm" onclick="eliminarExpediente(1)">Eliminar</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>María García</td>
-                        <td>Contratación</td>
-                        <td>Cerrado</td>
-                        <td><a href="editar_expediente.html?id=2" class="btn btn-warning btn-sm">Editar</a></td>
+                        <td>E</td>
+                        <td>67890</td>
+                        <td>2</td>
+                        <td>Acuerdo Extrajudicial</td>
+                        <td>Resuelto favorable</td>
+                        <td>
+                            <a href="editar_expediente.html?id=2" class="btn btn-warning btn-sm">Editar</a>
+                            <button class="btn btn-danger btn-sm" onclick="eliminarExpediente(2)">Eliminar</button>
+                        </td>
                     </tr>
                     <!-- Agrega más filas según sea necesario -->
                 </tbody>
@@ -87,5 +102,13 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script>
+        function eliminarExpediente(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar este expediente?")) {
+                // Aquí iría la lógica para eliminar el expediente
+                alert("Expediente eliminado: " + id);
+            }
+        }
+    </script>
 </body>
 </html>

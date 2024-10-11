@@ -42,7 +42,7 @@
     <header class="bg-dark text-white text-center py-5">
         <div class="container">
             <h1>Clientes</h1>
-            <p>Consulta y gestiona la información de nuestros clientes.</p>
+            <p>Consulta y gestiona la información de los clientes.</p>
         </div>
     </header>
 
@@ -50,30 +50,42 @@
     <section class="py-5">
         <div class="container">
             <h2 class="text-center">Lista de Clientes</h2>
+            <div class="text-end mb-3">
+                <a href="agregar_cliente.html" class="btn btn-success">Agregar Cliente</a>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Teléfono</th>
-                        <th>Email</th>
+                        <th>Tipo Persona</th>
+                        <th>Tipo DNI</th>
+                        <th>Apellido/Razón Social</th>
+                        <th>Nombres</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Juan Pérez</td>
-                        <td>3476623676</td>
-                        <td>juan.perez@email.com</td>
-                        <td><a href="editar_cliente.html?id=1" class="btn btn-warning btn-sm">Editar</a></td>
+                        <td>1</td>
+                        <td>DNI 12345678</td>
+                        <td>Pérez</td>
+                        <td>Juan</td>
+                        <td>
+                            <a href="editar_cliente.html?id=1" class="btn btn-warning btn-sm">Editar</a>
+                            <button class="btn btn-danger btn-sm" onclick="eliminarCliente(1)">Eliminar</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>María García</td>
-                        <td>3476623677</td>
-                        <td>maria.garcia@email.com</td>
-                        <td><a href="editar_cliente.html?id=2" class="btn btn-warning btn-sm">Editar</a></td>
+                        <td>2</td>
+                        <td>CUIT 20-12345678-9</td>
+                        <td>Empresa S.A.</td>
+                        <td>Rosa</td>
+                        <td>
+                            <a href="editar_cliente.html?id=2" class="btn btn-warning btn-sm">Editar</a>
+                            <button class="btn btn-danger btn-sm" onclick="eliminarCliente(2)">Eliminar</button>
+                        </td>
                     </tr>
                     <!-- Agrega más filas según sea necesario -->
                 </tbody>
@@ -87,5 +99,13 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script>
+        function eliminarCliente(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar este cliente?")) {
+                // Aquí iría la lógica para eliminar el cliente
+                alert("Cliente eliminado: " + id);
+            }
+        }
+    </script>
 </body>
 </html>

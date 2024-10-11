@@ -50,12 +50,17 @@
     <section class="py-5">
         <div class="container">
             <h2 class="text-center">Lista de Juzgados</h2>
+            <div class="text-end mb-3">
+                <a href="agregar_juzgado.html" class="btn btn-success">Agregar Juzgado</a>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Dirección</th>
+                        <th>Nro Juzgado</th>
+                        <th>Nombre Juzgado</th>
+                        <th>Juez de Trámite</th>
+                        <th>Secretario</th>
                         <th>Teléfono</th>
                         <th>Acciones</th>
                     </tr>
@@ -63,17 +68,27 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Juzgado de Primera Instancia</td>
-                        <td>Calle Ejemplo 123</td>
-                        <td>3476623678</td>
-                        <td><a href="editar_juzgado.html?id=1" class="btn btn-warning btn-sm">Editar</a></td>
+                        <td>1</td>
+                        <td>Juzgado Civil</td>
+                        <td>Dr. Martínez</td>
+                        <td>Sr. López</td>
+                        <td>1234-5678</td>
+                        <td>
+                            <a href="editar_juzgado.html?id=1" class="btn btn-warning btn-sm">Editar</a>
+                            <button class="btn btn-danger btn-sm" onclick="eliminarJuzgado(1)">Eliminar</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Juzgado de Menores</td>
-                        <td>Avenida Ejemplo 456</td>
-                        <td>3476623679</td>
-                        <td><a href="editar_juzgado.html?id=2" class="btn btn-warning btn-sm">Editar</a></td>
+                        <td>2</td>
+                        <td>Juzgado Penal</td>
+                        <td>Dr. Pérez</td>
+                        <td>Sr. García</td>
+                        <td>8765-4321</td>
+                        <td>
+                            <a href="editar_juzgado.html?id=2" class="btn btn-warning btn-sm">Editar</a>
+                            <button class="btn btn-danger btn-sm" onclick="eliminarJuzgado(2)">Eliminar</button>
+                        </td>
                     </tr>
                     <!-- Agrega más filas según sea necesario -->
                 </tbody>
@@ -87,5 +102,13 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script>
+        function eliminarJuzgado(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar este juzgado?")) {
+                // Aquí iría la lógica para eliminar el juzgado
+                alert("Juzgado eliminado: " + id);
+            }
+        }
+    </script>
 </body>
 </html>
